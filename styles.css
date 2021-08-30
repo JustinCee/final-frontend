@@ -13,6 +13,16 @@ body{
 .landing {
     background-image: url(https://picsum.photos/id/943/1900/800);
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing img{
+    height: 600px;
+    width: 700px;
+    object-fit: contain;
+    float: right;
 }
 
 /* Add a black background color to the top navigation */
@@ -56,3 +66,18 @@ body{
       object-fit: cover;
       padding: 10px;
   }
+
+  .topnav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 30px;
+    margin-right: 16px;
+    font-size: 17px;
+    color: black;
+  }
+
+.topnav ::placeholder{
+    color: #417594;
+}
+
