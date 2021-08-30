@@ -15,7 +15,7 @@ body{
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .landing img{
@@ -30,6 +30,9 @@ body{
     background-color: white;
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
   
   /* Style the links inside the navigation bar */
