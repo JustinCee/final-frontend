@@ -12,17 +12,27 @@ body{
 
 .landing {
     background-image: url(https://picsum.photos/id/943/1900/800);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .landing img{
     height: 600px;
     width: 700px;
     object-fit: contain;
-    float: right;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.landing h2{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Add a black background color to the top navigation */
