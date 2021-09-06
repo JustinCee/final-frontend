@@ -94,3 +94,42 @@ body{
     color: #417594;
 }
 
+.product img {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  padding: 1%;
+}
+
+.product {
+  max-width: 500px;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1%;
+  padding: 1%;
+}
+
+.product-title,
+.product-cat,
+.product-quan,
+.product-cost {
+  padding: 1%;
+}
+
+#project-container {
+  padding: 2px 2px;
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
