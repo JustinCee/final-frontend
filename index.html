@@ -12,12 +12,19 @@
         <img src="./images/new new.PNG" alt="my logo">
         <div class="topnav-right">
         <a class="active" href="#landing">Home</a>
-        <div id="filters">
+        <!-- <div id="filters"> -->
             <form onsubmit="event.preventDefault(); searchProduct();">
               <input type="text" required id="searchItem" placeholder="Search Here"/>
               <button type="submit">Search</button>
             </form>
-          </div>
+          <!-- </div> -->
+          <!-- <div class="buttons"> -->
+            <button id="myBtn">Add Products</button>
+            <div id="cart">Your cart is empty.
+                <span class="close"><i class="fas fa-door-open">x</i></span>
+            </div>
+            <button onclick="openCart()" id="cart-btn">Cart</button>
+          <!-- </div> -->
         <!-- <a href="#news">News</a>
         <a href="#contact">Contact</a>
         <a href="#about">About</a> -->

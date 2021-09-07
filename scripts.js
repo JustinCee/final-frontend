@@ -67,4 +67,26 @@ fetch("https://fakestoreapi.com/products")
       showProducts(foundProducts);
     }
   }
+
+  function addToCart(id) {
+    let product = products.find((item) => {
+      return item.id == id;
+    });
+    console.log(product);
+    cart.push(product);
   
+    console.log("These items are in your Cart: ", cart);
+    showCart(cart);
+  }
+  
+  function openCart() {
+    document.querySelector("#cart").classList.toggle("active");
+  }
+
+  // function closeCart() {
+  //   document.querySelector("#cart").classList.toggle("inactive");
+  // }
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
