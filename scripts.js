@@ -83,10 +83,6 @@ fetch("https://fakestoreapi.com/products")
     document.querySelector("#cart").classList.toggle("active");
   }
 
-  // function closeCart() {
-  //   document.querySelector("#cart").classList.toggle("inactive");
-  // }
-
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
+  function closeCart() {
+    document.querySelector("#cart").classList.toggle("inactive");
+  }
