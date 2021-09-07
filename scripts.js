@@ -50,3 +50,21 @@ fetch("https://fakestoreapi.com/products")
       cartContainer.innerHTML = "<h3>Cart is empty</h3>";
     }
   }
+
+  function searchProduct() {
+    let searchItem = document.querySelector("#searchItem").value;
+    console.log(searchItem);
+  
+    let foundProducts = products.filter((product) =>
+      product.title.toLowerCase().startsWith(searchItem.toLowerCase())
+    );
+    console.log(foundProducts);
+  
+    if (foundProducts.length == 0) {
+      document.querySelector("#project-container").innerHTML =
+        "<h3>Unfortunately we dont have the product you are searching for</h3>";
+    } else {
+      showProducts(foundProducts);
+    }
+  }
+  
