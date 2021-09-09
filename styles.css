@@ -3,12 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-body{
     font-family: 'Roboto', sans-serif;
 }
+
 
 #landing {
     background-image: url(https://picsum.photos/id/943/1900/800);
@@ -153,15 +150,32 @@ form {
   flex-direction: row;
 }
 
-#filters input{ 
-  color: #417594;
+form input{
+ color: #417594;
+ margin-bottom: 30px;
+}
+
+form button{
+  color: #f2f2f2;
+  background-color: #417594;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 20px;
+    border: #417594;
+}
+
+form button:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 #cart {
   position: fixed;
   top: 0;
   left: 100%;
-  width: 100vw;
+  width: 70vw;
   bottom: 0;
   z-index: 3;
   background-color: #417594;
@@ -176,10 +190,36 @@ form {
   left: 0;
 }
 
-#myBtn{
+#myBtn {
   color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+  background-color: #417594;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 20px;
+    border: #417594;
+    margin: 10px;
+}
+
+#myBtn:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#cart-btn {
+  color: #f2f2f2;
+  background-color: #417594;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 20px;
+    border: #417594;
+    margin-right: 10px;
+}
+
+#cart-btn:hover {
+  background-color: #ddd;
+  color: black;
 }
