@@ -223,3 +223,32 @@ form button:hover {
   background-color: #ddd;
   color: black;
 }
+
+.footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  height: 20%;
+  width: 100%;
+  background-color: #417594;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.info img{
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  margin-left: 20px;
+}

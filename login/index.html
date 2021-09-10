@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Meats</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Cyber Meats Log</h1>
+      </div>
+      <div class="center">
+        <h1>Login</h1>
+        <form
+          action="https://boiling-plains-09363.herokuapp.com/auth"
+          method="GET"
+          id="form"
+        >
+          <div class="text_area">
+            <input type="text" required />
+            <span></span>
+            <label>Username</label>
+          </div>
+          <div class="text_area">
+            <input type="password" required />
+            <span></span>
+            <label>Password</label>
+          </div>
+          <input type="submit" value="Login" onclick="loggingIn()" />
+          <div class="signup_link">
+            Not a member?
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn">Open Modal</button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="wording">
+              <h1>Register</h1>
+              <form method="POST">
+                <div class="text_area">
+                  <input type="text" required />
+                  <span></span>
+                  <label>UserName</label>
+                </div>
+                <div class="text_area">
+                  <input type="text" required />
+                  <span></span>
+                  <label>First Name</label>
+                </div>
+                <div class="text_area">
+                  <input type="text" required />
+                  <span></span>
+                  <label>Last Name</label>
+                </div>
+                <div class="text_area">
+                  <input type="text" required />
+                  <span></span>
+                  <label>E-mail Address</label>
+                </div>
+                <div class="text_area">
+                  <input type="text" required />
+                  <span></span>
+                  <label>Password</label>
+                </div>
+                <div class="text_area">
+                  <input type="text" required />
+                  <span></span>
+                  <label>Delivery Address</label>
+                </div>
+                <input type="submit" value="Register" onclick="newUser()">
+              </form>
+            </div>
+            </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+</body>
+<script src="./java.js"></script>
+</html>
