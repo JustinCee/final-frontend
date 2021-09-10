@@ -15,18 +15,14 @@
         <!-- <div id="filters"> -->
             <form onsubmit="event.preventDefault(); searchProduct();">
               <input type="text" required id="searchItem" placeholder="Search Here"/>
-              <button type="submit">Search</button>
+              <button type="submit" onclick="searchProducts(), event.preventDefault()">Search</button>
             </form>
-          <!-- </div> -->
-          <!-- <div class="buttons"> -->
+          
             <button id="myBtn"><a href="./login/index.html" style="padding: 0;">Account</a></button>
             <div id="cart">Your cart is empty.
             </div>
             <button onclick="openCart()" id="cart-btn">Cart</button>
-          <!-- </div> -->
-        <!-- <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a> -->
+          
         </div>
       </div>
     <div id="landing">
@@ -38,7 +34,7 @@
     <div class="footer">
       <h5>Property of Justin Calvert</h5>
       <div class="info">
-        <p>We accept the following cards:</p>
+        <h5>We accept the following cards:</h5>
         <img src="./images/pngegg (3).png" alt="payments">
       </div>
     </div>

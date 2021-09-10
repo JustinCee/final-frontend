@@ -1,88 +1,98 @@
-let products = [];
+let base_URL = "https://aqueous-brushlands-65716.herokuapp.com/show-products/";
+let cartProduct = [];
 let cart = [];
-console.log(cart);
+let products;
 
-fetch("https://fakestoreapi.com/products")
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
-    products = data;
-    showProducts(data);
+// view product function
+function getProducts(url) {
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      cartProduct = data;
+
+      // console.log(cartProduct);
+
+      products = data.data;
+
+      renderProducts(products);
+    });
+}
+
+getProducts(base_URL);
+
+function renderProducts(products) {
+  let container = document.querySelector("#project-container");
+
+  container.innerHTML = "";
+
+  products.forEach((product) => {
+    container.innerHTML += `<div class='product'>
+      <div class='prod_name'>Product: ${product[1]}</div>
+      <div class='prod_price'>Price: ${product[2]}</div>
+      <div class='prod_descrip'>${product[3]}</div>
+      <div class="prod_type">Type: ${product[4]}</div>
+      <div class="button"><button onclick="addToCart(${product[0]})">Add To Cart</button></div>`;
+  });
+}
+
+function showCart(productItems) {
+  let cartContainer = document.querySelector("#cart");
+  cartContainer.innerHTML = "";
+  if (productItems.length > 0) {
+    productItems.map((productItem) => {
+      cartContainer.innerHTML += `
+        <div class="product">
+        <div class="prod_name">Name: ${productItem[1]}</div>
+        <div class="prod_price">Price: ${productItem[2]}</div>
+        <div class="prod_descrip">Description: ${productItem[3]}</div>
+        <div class="prod_type">Type: ${productItem[4]}</div>
+        </div>    
+    `;
+    });
+    let sumPrice = productItems.reduce((total, item) => total + item.price, 0);
+    console.log(sumPrice);
+    cartContainer.innerHTML += `<h3>The Price will be: ${sumPrice}</h3>`;
+  } else {
+    cartContainer.innerHTML = "<h3>Cart is empty</h3>";
+  }
+}
+
+
+function searchProducts() {
+  let searchTerm = document.querySelector("#searchItem").value;
+
+  // console.log(cartProduct)
+
+  console.log(searchTerm);
+
+  let searchedItems = cartProduct.data.filter((item) => {
+    return item[1].toLowerCase().includes(searchTerm.toLowerCase());
   });
 
-  function showProducts(products) {
-    let productContainer = document.querySelector("#project-container");
-    productContainer.innerHTML = "";
-    products.forEach((product) => {
-      productContainer.innerHTML += `
-          <div class="product">
-              <img src="${product.image}" class="product-image">
-              <h4 class="product-title">${product.title}</h4>
-              <p class="product-cat">${product.category}</p>
-              <p class="product-quan">${product.description}</p>
-              <p class="product-cost">${product.price}</p>
-              <button onclick="addToCart(${product.id})">Add to Cart</button>
-          </div>    
-      `;
-    });
-  }
+  console.log(searchedItems);
+  // console.log(cartProduct)
 
+  if (searchedItems.length == 0) {
+    document.querySelector("#project-container").innerHTML =
+      "<h2>There Are No Products of that Description</h2>";
+  } else {
+    renderProducts(searchedItems);
+  }
+}
 
-  function showCart(productItems) {
-    let cartContainer = document.querySelector("#cart");
-    cartContainer.innerHTML = "";
-    if (productItems.length > 0) {
-      productItems.map((productItem) => {
-        cartContainer.innerHTML += `
-          <div class="product">
-              <img src="${productItem.image}" class="product-image">
-              <h4 class="product-title">${productItem.title}</h4>
-              <p class="product-cat">${productItem.category}</p>
-              <p class="product-quan">${productItem.description}</p>
-              <p class="product-cost">${productItem.price}</p>
-          </div>    
-      `;
-      });
-      let sumPrice = productItems.reduce((total, item) => total + item.price, 0);
-      console.log(sumPrice);
-      cartContainer.innerHTML += `<h3>The Price will be: ${sumPrice}</h3>`;
-    } else {
-      cartContainer.innerHTML = "<h3>Cart is empty</h3>";
-    }
-  }
+function openCart() {
+  document.querySelector("#cart").classList.toggle("active");
+}
 
-  function searchProduct() {
-    let searchItem = document.querySelector("#searchItem").value;
-    console.log(searchItem);
-  
-    let foundProducts = products.filter((product) =>
-      product.title.toLowerCase().startsWith(searchItem.toLowerCase())
-    );
-    console.log(foundProducts);
-  
-    if (foundProducts.length == 0) {
-      document.querySelector("#project-container").innerHTML =
-        "<h3>Unfortunately we dont have the product you are searching for</h3>";
-    } else {
-      showProducts(foundProducts);
-    }
-  }
+function addToCart(id) {
+  let product = products.find((item) => {
+    return item.id == id;
+  });
+  console.log(product);
+  cart.push(product);
 
-  function addToCart(id) {
-    let product = products.find((item) => {
-      return item.id == id;
-    });
-    console.log(product);
-    cart.push(product);
-  
-    console.log("These items are in your Cart: ", cart);
-    showCart(cart);
-  }
-  
-  function openCart() {
-    document.querySelector("#cart").classList.toggle("active");
-  }
-
-  function closeCart() {
-    document.querySelector("#cart").classList.toggle("inactive");
-  }
+  console.log("These items are in your Cart: ", cart);
+  showCart(cart);
+}

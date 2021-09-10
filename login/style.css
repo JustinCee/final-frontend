@@ -159,3 +159,19 @@ input[type="submit"] {
     cursor: pointer;
   }
 
+  #myBtn{
+    color: #f2f2f2;
+    background-color:#2691d9;
+    ;
+      text-align: center;
+      padding: 10px 10px;
+      text-decoration: none;
+      font-size: 14px;
+      border-radius: 20px;
+      border: #417594;
+  }
+  
+  #myBtn:hover{
+    background-color: #ddd;
+    color: black;
+  }
